@@ -13,7 +13,7 @@
 		6C2AD2AB2E30ECCD00A17A10 /* FirebaseAnalyticsIdentitySupport in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2AD2AA2E30ECCD00A17A10 /* FirebaseAnalyticsIdentitySupport */; };
 		6C2AD2AD2E30ECCD00A17A10 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2AD2AC2E30ECCD00A17A10 /* FirebaseAppCheck */; };
 		6C2AD2AF2E30ECCD00A17A10 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2AD2AE2E30ECCD00A17A10 /* FirebaseAppDistribution-Beta */; };
-		6C2AD2B12E30ECCD00A17A10 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2AD2B02E30ECCD00A17A10 /* FirebaseAuth */; };
+		6C2AD2B12E30ECCD00A17A10 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2AD2B02E30ECCD00A17A10 /* FirebaseAuth */; settings = {ATTRIBUTES = (Required, ); }; };
 		6C2AD2B32E30ECCD00A17A10 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2AD2B22E30ECCD00A17A10 /* FirebaseAuthCombine-Community */; };
 		6C2AD2B52E30ECCD00A17A10 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2AD2B42E30ECCD00A17A10 /* FirebaseCore */; };
 		6C2AD2B72E30ECCD00A17A10 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2AD2B62E30ECCD00A17A10 /* FirebaseCrashlytics */; };
@@ -30,9 +30,11 @@
 		6C2AD2CD2E30ECCD00A17A10 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2AD2CC2E30ECCD00A17A10 /* FirebaseRemoteConfig */; };
 		6C2AD2CF2E30ECCD00A17A10 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2AD2CE2E30ECCD00A17A10 /* FirebaseStorage */; };
 		6C2AD2D12E30ECCD00A17A10 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2AD2D02E30ECCD00A17A10 /* FirebaseStorageCombine-Community */; };
+		6C2AD3282E3123A800A17A10 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2AD3272E3123A800A17A10 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C2AD3272E3123A800A17A10 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		B9DA97B12DC1472C00A4DA20 /* CMPFirebaseAuthBoilerplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMPFirebaseAuthBoilerplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C2AD3282E3123A800A17A10 /* libsqlite3.tbd in Frameworks */,
 				6C2AD2BD2E30ECCD00A17A10 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				6C2AD2BF2E30ECCD00A17A10 /* FirebaseFunctions in Frameworks */,
 				6C2AD2CB2E30ECCD00A17A10 /* FirebasePerformance in Frameworks */,
@@ -96,11 +99,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C2AD3262E3123A800A17A10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C2AD3272E3123A800A17A10 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B9DA97A82DC1472C00A4DA20 = {
 			isa = PBXGroup;
 			children = (
 				B9DA98002DC14AA900A4DA20 /* Configuration */,
 				B9DA97B32DC1472C00A4DA20 /* iosApp */,
+				6C2AD3262E3123A800A17A10 /* Frameworks */,
 				B9DA97B22DC1472C00A4DA20 /* Products */,
 			);
 			sourceTree = "<group>";

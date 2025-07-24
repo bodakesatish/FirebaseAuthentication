@@ -1,0 +1,44 @@
+CREATE TABLE ProfileEntity (
+    uid TEXT NOT NULL PRIMARY KEY, -- Using INTEGER for uid as it's an ID
+    fullName TEXT NOT NULL,
+--     isinGrowth TEXT, -- Nullable as per your data class
+--     isinDivReinvestment TEXT, -- Nullable
+    email TEXT NOT NULL,
+    registrationTimestamp INTEGER NOT NULL, -- Timestamp to know when data was last updated
+    lastLoginTimestamp INTEGER NOT NULL
+);
+-- SQLDelight will generate Kotlin functions based on these queries
+
+-- Get all schemes
+selectAll:
+SELECT *
+FROM ProfileEntity
+ORDER BY fullName ASC;
+
+-- Get a specific scheme by its code
+selectByCode:
+SELECT *
+FROM ProfileEntity
+WHERE uid = :uid;
+
+-- Insert a new scheme or replace if it already exists (based on uid)
+insertOrReplace:
+INSERT OR REPLACE INTO ProfileEntity(uid, fullName, email, registrationTimestamp, lastLoginTimestamp)--, isinGrowth, isinDivReinvestment, lastFetched)
+VALUES (?, ?,?, ?,?);--, ?, ?, ?);
+
+
+-- Delete all schemes (useful for refreshing cache)
+deleteAll:
+DELETE FROM ProfileEntity;
+
+-- Count of schemes (example utility query)
+count:
+SELECT COUNT(*) FROM ProfileEntity;
+
+
+-- To take a ProfileEntity object, you usually define it like this:
+insertOrReplaceTakingObject:
+INSERT OR REPLACE INTO ProfileEntity(uid, fullName, email, registrationTimestamp, lastLoginTimestamp)
+VALUES ?; -- This binds the entire object
+-- And then the generated function would be:
+-- insertOrReplaceTakingObject(profileEntity: ProfileEntity)
