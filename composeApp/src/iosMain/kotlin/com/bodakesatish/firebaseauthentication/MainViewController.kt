@@ -7,5 +7,5 @@ fun MainViewController() = ComposeUIViewController(
         KoinInitializer().init()
     }
 ) {
-    AppNavigation()
+    _root_ide_package_.com.bodakesatish.firebaseauthentication.app.navigation.AppNavigation()
 }
